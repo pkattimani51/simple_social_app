@@ -6,3 +6,4 @@ faker
 django-bootstrap4
 django-braces
 pillow
+django-debug-toolbar
