@@ -25,7 +25,7 @@ SECRET_KEY = 'ct&8jp*==cy_sur&1=fu)j&l(pfbw=-@^x-skwy2_k6q)6vcp3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -137,3 +137,7 @@ LOGOUT_REDIRECT_URL = 'thanks'
 
 SESSION_COOKIE_AGE = 60 * 2
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Heroku setup
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

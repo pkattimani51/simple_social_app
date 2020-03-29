@@ -1,0 +1,8 @@
+Django
+django-heroku
+gunicorn
+whitenoise
+faker
+django-bootstrap4
+django-braces
+pillow
