@@ -168,7 +168,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-PROD = False
+PROD = True
 
 if PROD:
     DATABASES['default']['NAME'] = 'simple_social'
