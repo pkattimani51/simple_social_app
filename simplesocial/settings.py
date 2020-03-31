@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'simplesocial.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'djongo',
-            'ENFORCE_SCHEMA': True,
+            'ENFORCE_SCHEMA': False,
             'LOGGING': {
                 'version': 1,
                 'loggers': {
@@ -100,7 +100,7 @@ DATABASES = {
                     }
                 },
              },
-            'NAME': 'simple_social',
+            'NAME': 'simple_social_local',
             'CLIENT': {
                 'host': 'mongodb+srv://cluster0-kvxiu.mongodb.net',
                 'port': 27017,
@@ -161,9 +161,14 @@ INTERNAL_IPS = ['127.0.0.1']
 # All session related Constants can be views at
 # django\conf\global_settings.py
 
-SESSION_COOKIE_AGE = 60 * 2
+SESSION_COOKIE_AGE = 60 * 60 * 1
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Heroku setup
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+PROD = True
+
+if PROD:
+    DATABASES['default']['NAME'] = 'simple_social'
