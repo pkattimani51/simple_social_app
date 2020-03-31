@@ -10,3 +10,4 @@ django-debug-toolbar
 djongo
 dnspython
 sqlparse==0.2.4
+misaka
