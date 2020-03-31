@@ -80,12 +80,37 @@ WSGI_APPLICATION = 'simplesocial.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+            'ENGINE': 'djongo',
+            'ENFORCE_SCHEMA': True,
+            'LOGGING': {
+                'version': 1,
+                'loggers': {
+                    'djongo': {
+                        'level': 'DEBUG',
+                        'propogate': False,
+                    }
+                },
+             },
+            'NAME': 'simple_social',
+            'CLIENT': {
+                'host': 'mongodb+srv://cluster0-kvxiu.mongodb.net',
+                'port': 27017,
+                'username': 'root',
+                'password': 'root',
+                'authSource': 'admin',
+                'authMechanism': 'SCRAM-SHA-1'
+            }
+        }
     }
-}
 
 
 # Password validation

@@ -7,3 +7,5 @@ django-bootstrap4
 django-braces
 pillow
 django-debug-toolbar
+djongo
+dnspython
